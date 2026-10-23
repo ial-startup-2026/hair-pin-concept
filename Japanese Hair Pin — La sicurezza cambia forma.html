@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japanese Hair Pin — La sicurezza cambia forma</title>
+<meta name="description" content="Concept di accessorio ispirato alle kanzashi giapponesi con una visione nuova della sicurezza personale. Progetto in fase concettuale.">
+<meta property="og:title" content="La sicurezza cambia forma.">
+<meta property="og:description" content="Un accessorio ispirato al design giapponese. Concept in fase di sviluppo.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
+<style>
+:root{--coral:#ff4b3e;--cherry:#ff7aa8;--ink:#0d0a0c;--ivory:#f8f2e8;--volt:#6a2bff;--silver:#c9ccd1;--pad:env(safe-area-inset-top,0px);box-sizing:border-box;padding-top:var(--pad);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;line-height:.95;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1200px;margin:auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+.dark{background:var(--ink);color:var(--ivory)}
+.coral{background:var(--coral);color:var(--ink)}
+.eyebrow{font:700 12px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px;display:flex;gap:12px;align-items:center}
+.eyebrow::before{content:"";width:36px;height:2px;background:currentColor}
+h2{font-size:clamp(2.2rem,6vw,5rem);max-width:15ch}
+p.lead{font-size:1.15rem;max-width:56ch}
+.btn{display:inline-block;padding:16px 28px;border:2px solid currentColor;border-radius:0;font:700 13px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.16em;text-decoration:none;cursor:pointer;background:none;color:inherit;transition:transform .25s,background .25s,color .25s}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px)}
+.btn.fill{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn.fill:hover{background:var(--volt);border-color:var(--volt)}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+.dark :focus-visible,.coral .btn:focus-visible{outline-color:var(--cherry)}
+/* progress + nav */
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--volt);z-index:60}
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(14px + env(safe-area-inset-top,0px)) 24px 14px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:normal;background:rgba(13,10,12,.72);backdrop-filter:blur(10px);color:var(--ivory)}
+.logo{font:700 14px/1 "Helvetica Neue",Arial;letter-spacing:.28em;text-decoration:none}
+.logo b{color:var(--coral)}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--coral);transition:width .3s}
+nav a:hover::after{width:100%}
+#burger{display:none;background:none;border:0;color:inherit;width:44px;height:44px;cursor:pointer}
+#burger span{display:block;width:26px;height:2px;background:currentColor;margin:6px auto;transition:transform .3s,opacity .3s}
+#burger[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}
+#burger[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+@media(max-width:860px){
+ #burger{display:block}
+ nav{position:fixed;inset:0;background:var(--coral);color:var(--ink);display:flex;align-items:center;justify-content:center;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+ nav.open{transform:none}
+ nav ul{flex-direction:column;text-align:center}
+ nav a{font:700 2rem Georgia,serif;text-transform:none;letter-spacing:0}
+}
+/* hero */
+#hero{min-height:100svh;padding:140px 0 90px;background:radial-gradient(circle at 78% 30%,var(--cherry) 0,transparent 38%),linear-gradient(135deg,var(--coral),#c91d3b 70%,var(--ink));color:var(--ivory);overflow:hidden;display:flex;align-items:center}
+#hero h1{font-size:clamp(3.2rem,11vw,10rem);max-width:9ch;text-transform:uppercase}
+#hero h1 em{font-style:italic;color:var(--ink);display:inline-block}
+#hero .sub{font-size:1.25rem;max-width:34ch;margin:28px 0 34px}
+#hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+#hero .btn.fill{background:var(--ivory);color:var(--ink);border-color:var(--ivory)}
+.hero-pin{position:absolute;right:-4%;top:50%;width:min(70vw,720px);transform:translateY(-50%) rotate(-24deg);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:float 7s ease-in-out infinite;pointer-events:none}
+@keyframes float{50%{transform:translateY(-54%) rotate(-21deg)}}
+.vline{position:absolute;left:24px;bottom:0;width:2px;height:90px;background:var(--ivory);transform-origin:top;animation:grow 2.4s ease-in-out infinite}
+@keyframes grow{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.scrollhint{position:absolute;left:44px;bottom:26px;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.vert{position:absolute;right:24px;bottom:30px;writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+/* placeholders */
+.ph{position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px;min-height:360px;color:var(--ivory);transition:transform .6s}
+.ph>svg{position:absolute;inset:0;margin:auto;width:70%;opacity:.95;transition:transform .8s}
+.ph:hover>svg{transform:scale(1.08) rotate(-3deg)}
+.ph small{position:relative;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.55);padding:6px 10px}
+.g1{background:linear-gradient(160deg,var(--coral),#8a1030)}
+.g2{background:linear-gradient(160deg,var(--cherry),var(--volt))}
+.g3{background:linear-gradient(160deg,#2a2130,var(--ink))}
+.g4{background:linear-gradient(160deg,var(--silver),#7d8088)}
+.g5{background:linear-gradient(160deg,var(--volt),var(--coral))}
+/* problem */
+.big{font:700 clamp(8rem,22vw,20rem)/.8 Georgia,serif;color:rgba(255,75,62,.18);position:absolute;right:2%;top:40px;user-select:none}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
+.cols .ph{min-height:420px}
+.cols .ph:nth-child(2){margin-top:60px}
+.cols p{position:relative;margin:0;font:1.35rem/1.25 Georgia,serif}
+.quote{margin-top:60px;padding-left:24px;border-left:4px solid var(--coral);font:1.4rem/1.35 Georgia,serif;max-width:50ch}
+/* product */
+.prodgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:50px}
+.prodgrid .ph{min-height:300px}
+.prodgrid .a{grid-column:span 4;min-height:460px}.prodgrid .b{grid-column:span 2}
+.prodgrid .c{grid-column:span 2}.prodgrid .d{grid-column:span 2}.prodgrid .e{grid-column:span 2}
+.note{border:2px dashed currentColor;padding:18px 22px;margin-top:40px;max-width:70ch;font-size:.95rem}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.card{position:relative;min-height:520px;overflow:hidden;color:var(--ivory)}
+.card .ph{position:absolute;inset:0;min-height:0}
+.card .txt{position:absolute;inset:auto 0 0 0;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,.85));transition:padding .4s}
+.card h3{font-size:2rem;margin-bottom:10px}
+.card p{margin:0;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .5s}
+.card:hover p,.card:focus-within p,.card:focus p{max-height:160px;opacity:1}
+@media(hover:none){.card p{max-height:none;opacity:1}}
+/* explorer */
+.explore{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:50px;align-items:start}
+#stage{min-height:520px;transition:background .5s}
+.swatches{display:flex;gap:12px;margin:20px 0}
+.swatches button{width:44px;height:44px;border-radius:50%;border:2px solid var(--ivory);cursor:pointer;transition:transform .2s}
+.swatches button[aria-pressed=true]{outline:3px solid var(--cherry);outline-offset:3px;transform:scale(1.1)}
+.thumbs{display:flex;gap:10px;margin:18px 0}
+.thumbs button{padding:10px 14px;border:1px solid var(--silver);background:none;color:inherit;cursor:pointer;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.thumbs button[aria-pressed=true]{background:var(--ivory);color:var(--ink)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:0;font-size:.95rem}
+dt{color:var(--cherry);font-weight:700}dd{margin:0}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px;border-top:2px solid var(--ink)}
+.steps div{padding:30px 28px 10px 0}
+.steps b{font:700 5rem/1 Georgia,serif;color:var(--volt);display:block}
+.steps h3{font-size:1.8rem;margin:12px 0}
+/* phones */
+.phones{display:flex;gap:26px;overflow-x:auto;padding:20px 4px 30px;margin-top:40px;scroll-snap-type:x mandatory}
+.phone{flex:0 0 230px;height:470px;border:7px solid #2b2b30;border-radius:36px;background:var(--ink);padding:26px 16px;scroll-snap-align:start;position:relative;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.phone::before{content:"";position:absolute;top:8px;left:50%;width:60px;height:6px;border-radius:3px;background:#2b2b30;transform:translateX(-50%)}
+.phone h4{margin:6px 0 14px;font:700 1.1rem Georgia,serif}
+.pill{display:block;padding:11px;border-radius:12px;background:#1f1a22;margin-bottom:8px;font-size:12px}
+.sos{width:110px;height:110px;border-radius:50%;background:var(--coral);color:var(--ink);font:700 1.4rem Georgia;display:grid;place-items:center;margin:26px auto;box-shadow:0 0 0 14px rgba(255,75,62,.2)}
+.proto{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:var(--silver)}
+/* form */
+form{display:grid;gap:18px;max-width:640px;margin-top:34px}
+label{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+input[type=email],select{width:100%;padding:14px;border:2px solid var(--ink);background:var(--ivory);font:inherit;border-radius:0}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.92rem}
+.chk input{margin-top:4px;width:20px;height:20px;accent-color:var(--ink)}
+.err{color:#5b0010;font-weight:700;font-size:.85rem;min-height:1.1em;margin-top:4px}
+#ok{display:none;background:var(--ink);color:var(--ivory);padding:20px;max-width:640px;margin-top:20px}
+/* footer */
+footer{background:var(--ink);color:var(--ivory);padding:70px 0 40px}
+footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer small{display:block;margin-top:40px;color:var(--silver);border-top:1px solid #333;padding-top:20px}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+ .cols,.cards,.steps,.explore,footer .grid{grid-template-columns:1fr}
+ .cols .ph:nth-child(2){margin-top:0}
+ .prodgrid .a,.prodgrid .b,.prodgrid .c,.prodgrid .d,.prodgrid .e{grid-column:span 6}
+ section{padding:80px 0}.hero-pin{opacity:.55;right:-30%}.vert{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="bar" aria-hidden="true"></div>
+<header>
+ <a class="logo" href="#hero" aria-label="Torna all’inizio">[NOME&nbsp;DA&nbsp;DEFINIRE]<b>.</b></a>
+ <nav id="menu" aria-label="Navigazione principale"><ul>
+  <li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Prodotto</a></li><li><a href="#esplora">Esplora</a></li><li><a href="#funziona">Come funziona</a></li><li><a href="#app">App</a></li><li><a href="#waitlist">Waitlist</a></li></ul></nav>
+ <button id="burger" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span></button>
+</header>
+
+<main>
+<section id="hero">
+ <svg class="hero-pin" viewBox="0 0 800 80" role="img" aria-label="Rendering concettuale della forcina: corpo nero opaco con dettagli corallo"><use href="#pin"/></svg>
+ <div class="wrap">
+  <p class="eyebrow" style="color:var(--ivory)">Concept · Design giapponese contemporaneo</p>
+  <h1>La sicurezza <em>cambia</em> forma.</h1>
+  <p class="sub">Un accessorio ispirato al design giapponese. Una nuova visione della sicurezza personale.</p>
+  <div class="btns"><a class="btn fill" href="#problema">SCOPRI IL CONCEPT</a><a class="btn" href="#prodotto">ESPLORA IL PRODOTTO</a></div>
+ </div>
+ <span class="vline" aria-hidden="true"></span><span class="scrollhint" aria-hidden="true">Scorri</span><span class="vert" aria-hidden="true">Prodotto in fase concettuale</span>
+</section>
+
+<section id="problema">
+ <div class="big" aria-hidden="true">01</div>
+ <div class="wrap">
+  <p class="eyebrow rv">Il problema</p>
+  <h2 class="rv">Perché la sicurezza dovrebbe essere un pensiero in più?</h2>
+  <div class="cols">
+   <div class="ph g3 rv"><p>Un dispositivo in più da ricordare.</p></div>
+   <div class="ph g2 rv"><p>Il telefono, sempre a portata di mano.</p></div>
+   <div class="ph g1 rv"><p>Poter chiedere aiuto, rapidamente.</p></div>
+  </div>
+  <p class="quote rv">Il design non può eliminare ogni rischio. Può però contribuire a rendere gli strumenti di sicurezza più accessibili e più semplici da utilizzare.</p>
+ </div>
+</section>
+
+<section id="prodotto" class="dark">
+ <div class="wrap">
+  <p class="eyebrow rv" style="color:var(--cherry)">Il prodotto</p>
+  <h2 class="rv">Un accessorio. Una nuova prospettiva.</h2>
+  <p class="lead rv" style="margin-top:26px">Ispirato alle kanzashi giapponesi, questo concept reinterpreta un oggetto tradizionale attraverso linee contemporanee, materiali premium e una nuova attenzione alla sicurezza personale.</p>
+  <div class="prodgrid">
+   <div class="ph g1 a rv"><svg viewBox="0 0 800 80" role="img" aria-label="Forcina isolata su sfondo corallo (segnaposto del rendering)"><use href="#pin"/></svg><small>Segnaposto · prodotto su corallo</small></div>
+   <div class="ph g2 b rv"><small>Segnaposto · indossata tra i capelli</small></div>
+   <div class="ph g3 c rv"><small>Segnaposto · macro dei materiali</small></div>
+   <div class="ph g4 d rv"><svg viewBox="0 0 800 80" role="img" aria-label="Vista laterale del concept (segnaposto)"><use href="#pin"/></svg><small>Segnaposto · vista laterale</small></div>
+   <div class="ph g5 e rv"><small>Segnaposto · packaging e accessorio</small></div>
+  </div>
+  <p class="note rv"><strong>Nota:</strong> il dispositivo con spray al peperoncino è ancora un concept. L’effettiva integrazione dipende dalla fattibilità tecnica, dai test di sicurezza e dalla conformità normativa. Le immagini sono segnaposto grafici, sostituibili con fotografie e rendering definitivi.</p>
+ </div>
+</section>
+
+<section id="design">
+ <div class="wrap">
+  <p class="eyebrow rv">Design che ha uno scopo</p>
+  <h2 class="rv">Forma, abitudini, responsabilità.</h2>
+  <div class="cards">
+   <article class="card rv" tabindex="0"><div class="ph g1"><svg viewBox="0 0 800 80" aria-hidden="true"><use href="#pin"/></svg></div><div class="txt"><h3>Design giapponese contemporaneo</h3><p>Forme essenziali, proporzioni curate e un’identità visiva distintiva.</p></div></article>
+   <article class="card rv" tabindex="0"><div class="ph g2"><svg viewBox="0 0 800 80" aria-hidden="true"><use href="#pin"/></svg></div><div class="txt"><h3>Pensato per la vita quotidiana</h3><p>Un accessorio concepito per integrarsi nelle abitudini personali e in differenti acconciature.</p></div></article>
+   <article class="card rv" tabindex="0"><div class="ph g5"><svg viewBox="0 0 800 80" aria-hidden="true"><use href="#pin"/></svg></div><div class="txt"><h3>Sicurezza progettata con responsabilità</h3><p>Attenzione all’ergonomia, alla prevenzione delle attivazioni accidentali, alla chiarezza d’uso e alla verifica delle funzionalità.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="esplora" class="dark" style="background:linear-gradient(180deg,var(--ink),#1a0f2e)">
+ <div class="wrap">
+  <p class="eyebrow rv" style="color:var(--cherry)">Esplora il concept</p>
+  <h2 class="rv">Scegli un colore. Guarda le viste.</h2>
+  <div class="explore">
+   <div id="stage" class="ph g3" role="img" aria-label="Presentazione interattiva del concept"><svg id="stagepin" viewBox="0 0 800 80" aria-hidden="true"><use href="#pin"/></svg><small id="cap">Rendering concettuale · colore: nero</small></div>
+   <div>
+    <div role="group" aria-label="Colore"><div class="swatches" id="sw">
+     <button data-c="nero" data-h="#0d0a0c" style="background:#0d0a0c" aria-label="Nero" aria-pressed="true"></button>
+     <button data-c="corallo" data-h="#ff4b3e" style="background:#ff4b3e" aria-label="Corallo" aria-pressed="false"></button>
+     <button data-c="avorio" data-h="#f8f2e8" style="background:#f8f2e8" aria-label="Avorio" aria-pressed="false"></button>
+     <button data-c="viola" data-h="#6a2bff" style="background:#6a2bff" aria-label="Viola" aria-pressed="false"></button></div></div>
+    <p id="swnote" style="font-size:.9rem;color:var(--silver);margin:0">Variante in nero: è il rendering di riferimento del concept.</p>
+    <div class="thumbs" role="group" aria-label="Vista"><button data-v="0" aria-pressed="true">Frontale</button><button data-v="-90" aria-pressed="false">Laterale</button><button data-v="-24" aria-pressed="false">Prospettica</button></div>
+    <dl><dt>Materiali</dt><dd>Corpo sottile e allungato, finitura nera opaca (concept)</dd><dt>Dettagli</dt><dd>Accenti corallo, riflessi metallici satinati</dd><dt>Ispirazione</dt><dd>Kanzashi giapponesi</dd><dt>Stato</dt><dd>Concept: spray, Bluetooth e app non sono sviluppati né funzionanti</dd></dl>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="funziona">
+ <div class="wrap">
+  <p class="eyebrow rv">Come potrebbe funzionare</p>
+  <h2 class="rv">Una visione futura, in tre passaggi.</h2>
+  <div class="steps">
+   <div class="rv"><b>01</b><h3>Indossare</h3><p>Un accessorio ispirato alle forcine giapponesi, concepito per essere elegante e confortevole.</p></div>
+   <div class="rv"><b>02</b><h3>Accedere alla sicurezza</h3><p>Una possibile versione futura potrebbe integrare un sistema di allarme personale e una funzione SOS collegata a un’applicazione.</p></div>
+   <div class="rv"><b>03</b><h3>Chiedere aiuto</h3><p>L’app potrebbe permettere di contattare persone fidate e condividere la posizione, se il dispositivo, il telefono e i servizi necessari lo consentono.</p></div>
+  </div>
+  <p class="note rv">Lo spray al peperoncino è una funzione prevista dal concept, soggetta a una valutazione tecnica e normativa separata.</p>
+ </div>
+</section>
+
+<section id="app" class="dark">
+ <div class="wrap">
+  <p class="eyebrow rv" style="color:var(--cherry)">Un’esperienza digitale</p>
+  <h2 class="rv">Prototipi grafici dell’app.</h2>
+  <div class="phones" tabindex="0" aria-label="Schermate prototipo, scorri in orizzontale">
+   <div class="phone"><h4>Dashboard</h4><span class="pill">Dispositivo · esempio</span><span class="pill">Batteria · esempio</span><span class="pill">Informazioni prodotto</span><span class="proto">PROTOTIPO GRAFICO</span></div>
+   <div class="phone"><h4>Contatti fidati</h4><span class="pill">Contatto 1</span><span class="pill">Contatto 2</span><span class="pill">+ Aggiungi</span><span class="proto">PROTOTIPO GRAFICO</span></div>
+   <div class="phone"><h4>SOS</h4><div class="sos">SOS</div><span class="pill" style="text-align:center">Schermata dimostrativa</span><span class="proto">PROTOTIPO GRAFICO</span></div>
+   <div class="phone"><h4>Connessione</h4><span class="pill">Stato: simulato</span><span class="pill">Telefono · accessorio</span><span class="proto">PROTOTIPO GRAFICO</span></div>
+   <div class="phone"><h4>Percorso sicuro</h4><span class="pill">Partenza → Arrivo</span><span class="pill">Conferma di arrivo</span><span class="proto">PROTOTIPO GRAFICO</span></div>
+  </div>
+  <p style="color:var(--silver);font-size:.9rem">Nessuna di queste funzioni è stata implementata: sono visualizzazioni di design.</p>
+ </div>
+</section>
+
+<section id="community">
+ <div class="wrap">
+  <p class="eyebrow rv">Identità e community</p>
+  <h2 class="rv">La sicurezza è anche libertà di scegliere.</h2>
+  <p class="lead rv" style="margin-top:26px">Il progetto nasce per ascoltare le esigenze delle utilizzatrici e progettare strumenti più accessibili e intuitivi. Se vuoi contribuire allo sviluppo del concept, condividi la tua opinione: ogni idea è benvenuta.</p>
+  <div class="cols"><div class="ph g2 rv"><small>Segnaposto · ritratto editoriale</small></div><div class="ph g1 rv"><small>Segnaposto · ritratto editoriale</small></div><div class="ph g5 rv"><small>Segnaposto · ritratto editoriale</small></div></div>
+  <a class="btn fill rv" href="#waitlist" style="margin-top:36px">PARTECIPA ALLO SVILUPPO</a>
+ </div>
+</section>
+
+<section id="waitlist" class="coral">
+ <div class="wrap">
+  <h2 class="rv" style="max-width:18ch">Il futuro della sicurezza personale inizia dal design.</h2>
+  <p class="lead rv" style="margin-top:24px">Stiamo esplorando una nuova idea di accessorio personale. Lascia la tua email per seguire lo sviluppo del concept e condividere la tua opinione.</p>
+  <form id="wl" novalidate>
+   <div><label for="em">Email</label><input id="em" type="email" autocomplete="email" aria-describedby="e1"><div class="err" id="e1" role="alert"></div></div>
+   <div><label for="age">Fascia d’età (facoltativa)</label><select id="age"><option value="">Preferisco non dirlo</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45+</option></select></div>
+   <div><label for="fn">Funzione che ti interessa di più</label><select id="fn" aria-describedby="e2"><option value="">Seleziona…</option><option>Allarme personale</option><option>SOS con app</option><option>Condivisione posizione</option><option>Spray (concept)</option><option>Solo il design</option></select><div class="err" id="e2" role="alert"></div></div>
+   <div><div class="chk"><input id="cs" type="checkbox" aria-describedby="e3"><label for="cs" style="text-transform:none;letter-spacing:0;font-weight:400">Acconsento esplicitamente al trattamento dei miei dati per ricevere aggiornamenti sul progetto.</label></div><div class="err" id="e3" role="alert"></div></div>
+   <button class="btn fill" type="submit">SEGUI IL PROGETTO</button>
+  </form>
+  <div id="ok" role="status" tabindex="-1"><strong>Grazie!</strong> Modulo valido. <em>Questa è una demo: nessun backend è collegato e nessun dato è stato inviato o salvato.</em></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap"><div class="grid">
+  <div><a class="logo" href="#hero">[NOME&nbsp;DA&nbsp;DEFINIRE]<b>.</b></a><p style="max-width:36ch">Progetto di design in fase concettuale: un accessorio ispirato alle kanzashi con una nuova idea di sicurezza personale.</p></div>
+  <nav aria-label="Footer" style="position:static;transform:none;background:none;color:inherit;display:block;z-index:auto"><ul style="display:grid;gap:8px"><li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Prodotto</a></li><li><a href="#esplora">Esplora</a></li><li><a href="#waitlist">Waitlist</a></li></ul></nav>
+  <ul><li><a href="#info">Informazioni sul progetto</a></li><li><a href="#info">Privacy policy</a></li><li><a href="#info">Cookie policy</a></li></ul>
+ </div>
+ <small id="info">Contatti e canali social: non ancora configurati. Privacy e cookie policy: testi da redigere prima del lancio. Il prodotto è in fase concettuale; nessuna funzione, certificazione o disponibilità è dichiarata.</small></div>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a42"/><stop offset=".5" stop-color="#0d0a0c"/><stop offset="1" stop-color="#25252b"/></linearGradient>
+ <g id="pin"><rect x="60" y="34" width="640" height="10" rx="5" fill="var(--pc,url(#gb))"/><rect x="60" y="36" width="640" height="2" fill="rgba(255,255,255,.35)"/><circle cx="60" cy="39" r="26" fill="#ff4b3e"/><circle cx="52" cy="31" r="7" fill="rgba(255,255,255,.4)"/><rect x="132" y="30" width="14" height="18" rx="3" fill="#c9ccd1"/><path d="M700 34 L772 39 L700 44Z" fill="#c9ccd1"/></g>
+</defs></svg>
+
+<script>
+(function(){
+ var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+ // progress bar
+ var bar=$('#bar');addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+ // mobile menu
+ var b=$('#burger'),m=$('#menu');
+ function tog(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Chiudi il menu':'Apri il menu')}
+ b.onclick=function(){tog(!m.classList.contains('open'))};
+ $$('a',m).forEach(function(a){a.onclick=function(){tog(false)}});
+ addEventListener('keydown',function(e){if(e.key==='Escape')tog(false)});
+ // reveal
+ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});$$('.rv').forEach(function(el){io.observe(el)})}else{$$('.rv').forEach(function(el){el.classList.add('in')})}
+ // explorer: only the black render exists, so other colors update the presentation only
+ var st=$('#stage'),sp=$('#stagepin'),cap=$('#cap'),note=$('#swnote');
+ var bg={nero:'linear-gradient(160deg,#2a2130,#0d0a0c)',corallo:'linear-gradient(160deg,#ff4b3e,#8a1030)',avorio:'linear-gradient(160deg,#f8f2e8,#c9ccd1)',viola:'linear-gradient(160deg,#6a2bff,#1a0f2e)'};
+ $$('#sw button').forEach(function(btn){btn.onclick=function(){
+  $$('#sw button').forEach(function(x){x.setAttribute('aria-pressed','false')});btn.setAttribute('aria-pressed','true');
+  var c=btn.dataset.c;st.style.background=bg[c];
+  cap.textContent=c==='nero'?'Rendering concettuale · colore: nero':'Anteprima cromatica · colore: '+c;
+  note.textContent=c==='nero'?'Variante in nero: è il rendering di riferimento del concept.':'Solo la presentazione cambia colore: non esiste ancora un rendering di questa variante.';
+ }});
+ $$('.thumbs button').forEach(function(btn){btn.onclick=function(){
+  $$('.thumbs button').forEach(function(x){x.setAttribute('aria-pressed','false')});btn.setAttribute('aria-pressed','true');
+  sp.style.transform='rotate('+btn.dataset.v+'deg) scale(1.1)';sp.style.transition='transform .6s';
+ }});
+ // form
+ var f=$('#wl');
+ f.addEventListener('submit',function(e){
+  e.preventDefault();var ok=true;
+  function set(id,msg){$(id).textContent=msg;if(msg)ok=false}
+  var em=$('#em').value.trim();
+  set('#e1',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)?'':'Inserisci un indirizzo email valido.');
+  set('#e2',$('#fn').value?'':'Seleziona una funzione.');
+  set('#e3',$('#cs').checked?'':'Il consenso è necessario per proseguire.');
+  $('#em').setAttribute('aria-invalid',!!$('#e1').textContent);
+  if(ok){var o=$('#ok');o.style.display='block';o.focus();f.reset()}
+ });
+})();
+</script>
+</body>
+</html>
