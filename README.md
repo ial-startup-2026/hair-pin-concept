@@ -201,7 +201,7 @@ footer{border-top:8px solid var(--coral)}
 <body>
 <div id="bar" aria-hidden="true"></div>
 <header>
- <a class="logo" href="#hero" aria-label="Torna all’inizio">[NOME&nbsp;DA&nbsp;DEFINIRE]<b>.</b></a>
+ <a class="logo" href="#hero" aria-label="Torna all’inizio">QUEEN&nbsp;SAFE<b>.</b></a>
  <nav id="menu" aria-label="Navigazione principale"><ul>
   <li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Prodotto</a></li><li><a href="#esplora">Esplora</a></li><li><a href="#funziona">Come funziona</a></li><li><a href="#app">App</a></li><li><a href="#roadmap">Roadmap</a></li><li><a href="#faq">FAQ</a></li><li><a href="#waitlist">Waitlist</a></li></ul></nav>
  <button id="burger" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><span></span><span></span></button>
@@ -211,7 +211,6 @@ footer{border-top:8px solid var(--coral)}
 <section id="hero">
  <svg class="hero-pin" viewBox="0 0 800 80" role="img" aria-label="Rendering concettuale della forcina: corpo nero opaco con dettagli corallo"><use href="#pin"/></svg>
  <div class="wrap">
-  <p class="eyebrow" style="color:var(--ivory)">Concept · Design giapponese contemporaneo</p>
   <h1>La sicurezza <em>cambia</em> forma.</h1>
   <p class="sub">Un accessorio ispirato al design giapponese. Una nuova visione della sicurezza personale.</p>
   <div class="btns"><a class="btn fill" href="#problema">SCOPRI IL CONCEPT</a><a class="btn" href="#prodotto">ESPLORA IL PRODOTTO</a></div>
@@ -382,7 +381,7 @@ footer{border-top:8px solid var(--coral)}
 
 <footer>
  <div class="wrap"><div class="grid">
-  <div><a class="logo" href="#hero">[NOME&nbsp;DA&nbsp;DEFINIRE]<b>.</b></a><p style="max-width:36ch">Progetto di design in fase concettuale: un accessorio ispirato alle kanzashi con una nuova idea di sicurezza personale.</p></div>
+  <div><a class="logo" href="#hero">QUEEN&nbsp;SAFE<b>.</b></a><p style="max-width:36ch">Progetto di design in fase concettuale: un accessorio ispirato alle kanzashi con una nuova idea di sicurezza personale.</p></div>
   <nav aria-label="Footer" style="position:static;transform:none;background:none;color:inherit;display:block;z-index:auto"><ul style="display:grid;gap:8px"><li><a href="#problema">Il problema</a></li><li><a href="#prodotto">Prodotto</a></li><li><a href="#esplora">Esplora</a></li><li><a href="#waitlist">Waitlist</a></li></ul></nav>
   <ul><li><a href="#progetto">Informazioni sul progetto</a></li><li><a href="#info">Privacy policy</a></li><li><a href="#info">Cookie policy</a></li></ul>
  </div>
